@@ -2,7 +2,8 @@
 
 ## RUN THE SCRIPT AS SUPER USER
 
-## Brillo is missig
+## Brillo is missig (only works for laptops)
+## For instalation see https://gitlab.com/cameronnemo/brillo
 
 xbps-install -Su &
 xbps-install -Su &
