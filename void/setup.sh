@@ -68,7 +68,7 @@ xbps-install -S base-devel libX11-devel libXft-devel libXinerama-devel xsetroot 
 
 ## the rest
 xbps-install pywal python \
-	feh redshift rxvt-unicode zip xsecurelock htop qalculate keepassxc syncthing flameshot sxiv mpv timeshift \
+	feh redshift rxvt-unicode pfetch zip git xsecurelock htop qalculate keepassxc syncthing flameshot sxiv mpv timeshift \
 	rofi rofi-calc udisks2 \
 	xdg-utils \
 	libnotify dunst \
