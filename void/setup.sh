@@ -94,4 +94,4 @@ xdg-mime default firefox.desktop x-scheme-handler/https x-scheme-handler/http &
 xdg-mime default sxiv.desktop image/jpeg &
 xdg-mime default sxiv.desktop image/png
 
-## Brillo is missig
+## Brillo comes here
