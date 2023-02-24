@@ -12,3 +12,13 @@ Exec=/home/arega/Documentos/Nativefier/Lichess-linux-x64/Lichess
 Name=Lichess
 Comment=Lichess.org online chess
 ```
+### nix
+- nix stores this file in this dir so you can symlink it
+dir ex: ``/nix/store/q1xkq37y32vaqnam0fqphcvr64b6my0b-librewolf.desktop/share/applications/librewolf.desktop``
+
+```
+$ ln -s /nix/... ~/.local/share/applications/
+```
+
+### nativefier
+Nativefier stores binary in the created folder so add to the .desktop file as the exemple above.
