@@ -13,7 +13,7 @@ Name=Lichess
 Comment=Lichess.org online chess
 ```
 ### nix
-(nix amplifies repos for trusted apps. Flatpak can be used for extra protection for sertain applications ex:discord,zoom,...)
+(nix amplifies repos for trusted apps. Flatpak can be used for extra protection for sertain applications ex:discord, zoom, ...)
 - nix stores this file in this dir so you can symlink it
 dir ex: ``/nix/store/q1xkq37y32vaqnam0fqphcvr64b6my0b-librewolf.desktop/share/applications/librewolf.desktop``
 
