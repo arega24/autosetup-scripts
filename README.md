@@ -1,5 +1,4 @@
 # autosetup-scripts
-autosetup-scripts
 
 - for nix pkgs and nativefier webapps you might add files on ``~/.local/share/applications``
 - ex:
