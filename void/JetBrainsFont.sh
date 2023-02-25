@@ -1,10 +1,11 @@
 #!/bin/env sh
 
 cd 
-doas xbps-install zip
+sudo xbps-install zip
 xbps-fetch https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip & 
+sleep 2
 unzip Jet* 
-cp fonts/ttf/* /usr/share/fonts/
+sudo cp fonts/ttf/* /usr/share/fonts/TTF/
 
 
 

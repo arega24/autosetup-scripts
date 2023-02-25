@@ -1,97 +1,98 @@
 #!/bin/env sh
 
-## RUN THE SCRIPT AS SUPER USER
-
-## Brillo is missig (only works for laptops)
-## For instalation see https://gitlab.com/cameronnemo/brillo
-
-xbps-install -Su &
-xbps-install -Su &
-xbps-install -Su &
-xbps-install -Su &
-
 ## xorg
-xbps-install xorg-minimal &
+sudo xbps-install xorg-minimal xrdb xclip xrandr -y 
 
 ## keyboard xorg set
-xbps-install setxkbmap &
+sudo xbps-install setxkbmap -y 
 
 ## enable void nonfree repo (needed to install intel firmware and nvidia drivers)
-xbps-install void-repo-nonfree &
-
+sudo xbps-install void-repo-nonfree -y 
+sudo xbsp-install -S 
 ## Uncoment within your necessety
 
 ## Firmware intel
-#xbps-install intel-ucode &
-#xbps-reconfigure -fa & # it is necessary to regenerate your initramfs. this comand regenerate all
+#sudo xbps-install intel-ucode 
+#sudo xbps-reconfigure -fa  # it is necessary to regenerate your initramfs. this comand regenerate all
 
 ## Firmware amd (cpus and gpus)
-#xbps-install linux-firmware-amd mesa-dri vulkan-loader amdgpu &
-#xbps-install mesa-vulkan-radeon & 
-#xbps-install mesa-vaapi mesa-vdpau &
+sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader xf86-video-amdgpu -y 
+sudo xbps-install mesa-vulkan-radeon -y 
+sudo xbps-install mesa-vaapi mesa-vdpau -y 
 
 ## nvidia propriatary (1660 super) (nvidia == latast version; nvidia470 == ver 470)
-#xbps-install nvidia &
+#sudo xbps-install nvidia -y 
 
 ## power management (desktop)
-#ln -s /etc/sv/acpid/ /var/service/ &
-#sv status acpid &
+#sudo ln -s /etc/sv/acpid/ /var/service/ -y 
+#sudo sv status acpid -y 
 
 ## power management (laptop)
-#ln -s /etc/sv/acpid/ /var/service/ &
-#sv status acpid &
-#xbps-install tlp &
-#ln -s /etc/sv/tlp/ /var/service/ &
-#sv status tlp &
+sudo ln -s /etc/sv/acpid/ /var/service/ 
+sudo sv status acpid 
+sudo xbps-install tlp -y 
+sudo ln -s /etc/sv/tlp/ /var/service/ 
+sudo sv status tlp 
 
 ## Firewall
-xbps-install ufw &
-ln -s /etc/sv/ufw/ /var/service/ &
-sv status ufw &
+sudo xbps-install ufw -y 
+sudo ln -s /etc/sv/ufw/ /var/service/ 
+sudo sv status ufw 
+
+## iwd (for wifi ,works with eduroam)
+sudo xbps-install iwd linux-firmware linux-firmware-network
+sudo ln -s /etc/sv/iwd /var/service/
+
+## Eduroam 
+sudo xbps-install python3-dbus
+# Download python setup scrypt here https://cat.eduroam.org/
 
 ## pipewire (setup dbus before)
-xbps-install pipewire pulsemixer pamixer libjack-pipewire alsa-pipewire qpwgraph elogind &
+sudo xbps-install pipewire pulsemixer pamixer libjack-pipewire alsa-pipewire qpwgraph elogind -y 
 # for elogind to make efect, logout and login
-ln -s /etc/sv/pipewire /var/service/ &
-ln -s /etc/sv/pipewire-pulse /var/service/ &
+sudo ln -s /etc/sv/pipewire /var/service/ 
+sudo ln -s /etc/sv/pipewire-pulse /var/service/ 
 ## alsa 
-mkdir -p /etc/alsa/conf.d &
-ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d &
-ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d &
+sudo mkdir -p /etc/alsa/conf.d 
+sudo ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d 
+sudo ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d 
 
 # jack
-echo "/usr/lib/pipewire-0.3/jack" > /etc/ld.so.conf.d/pipewire-jack.conf &
-ldconfig &
+sudo echo "/usr/lib/pipewire-0.3/jack" > /etc/ld.so.conf.d/pipewire-jack.conf 
+sudo ldconfig 
 
 ## dwm utility
-xbps-install -S base-devel libX11-devel libXft-devel libXinerama-devel xsetroot &
+sudo xbps-install -S base-devel libX11-devel libXft-devel libXinerama-devel xsetroot -y 
 
 ## the rest
-xbps-install pywal python \
-	feh redshift rxvt-unicode pfetch zip git xsecurelock htop qalculate keepassxc syncthing flameshot sxiv mpv timeshift \
-	rofi rofi-calc udisks2 \
-	xdg-utils \
-	libnotify dunst \
-	zathura zathura-pdf-poppler \
-	lf ueberzug GraphicsMagick ffmpeg ghostscript zsh trash-cli fzf bat \
-	plata-theme lxappearance papirus-icon-theme &
+sudo xbps-install pywal python -y 
+sudo xbps-install feh redshift rxvt-unicode picom pfetch zip git xsecurelock htop qalculate keepassxc syncthing flameshot sxiv mpv timeshift -y 
+sudo xbps-install rofi rofi-calc udisks2 -y 
+sudo xbps-install xdg-utils -y 
+sudo xbps-install libnotify dunst -y
+sudo xbps-install zathura zathura-pdf-poppler -y 
+sudo xbps-install lf ueberzug GraphicsMagick ffmpeg ghostscript zsh trash-cli fzf bat -y 
+sudo xbps-install plata-theme lxappearance papirus-icon-theme -y 
 
 ## nfs
-xbps-install nfs-utils sv-netmount &
-ln -s /etc/sv/statd/ /var/service/ &
-ln -s /etc/sv/rpcbind/ /var/service/ &
-ln -s /etc/sv/netmount/ /var/service/ &
+sudo xbps-install nfs-utils sv-netmount -y 
+sudo ln -s /etc/sv/statd/ /var/service/ 
+sudo ln -s /etc/sv/rpcbind/ /var/service/ 
+sudo ln -s /etc/sv/netmount/ /var/service/ 
 
 ## dbus
-xbps-install dbus &
-ln -s /etc/sv/dbus/ /var/service/ &
+sudo xbps-install dbus -y 
+sudo ln -s /etc/sv/dbus/ /var/service/ 
 
 ## neovim
-xbps-install neovim yarn nodejs wget pwsh & # nodejs and yarn needed for mardown preview 
+sudo xbps-install neovim yarn nodejs wget pwsh -y  # nodejs and yarn needed for mardown preview 
 
 ## xdg
-xdg-mime default firefox.desktop x-scheme-handler/https x-scheme-handler/http &
-xdg-mime default sxiv.desktop image/jpeg &
+xdg-mime default firefox.desktop x-scheme-handler/https x-scheme-handler/http 
+xdg-mime default sxiv.desktop image/jpeg 
 xdg-mime default sxiv.desktop image/png
 
-## Brillo comes here
+## Brillo 
+sudo xbps-install brillo
+
+

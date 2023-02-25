@@ -1,20 +1,18 @@
 #!/bin/env sh
 
-## RUN AS SUPER USER
+sudo xbps-install nodejs 
+sudo npm update -g 
+sudo npm install -g nativefier 
+mkdir -p ~/Documentos/Nativefier/ 
+cd ~/Documentos/Nativefier/ 
 
-xbps-install nodejs &
-npm update -g &
-npm install -g nativefier &
-mkdir -p ~/Documentos/Nativefier/ &
-cd ~/Documentos/Nativefier/ &
-
-doas nativefier --name 'Lichess' 'lichess.org' &
-doas nativefier --name 'Piped' 'https://piped.kavin.rocks/' 
-doas nativefier --name 'Twitch' 'twitch.tv' 
+sudo nativefier --name 'Lichess' 'lichess.org' 
+sudo nativefier --name 'Piped' 'https://piped.kavin.rocks/' 
+sudo nativefier --name 'Twitch' 'twitch.tv' 
 
 
 # Exe of a desktop entry file 
-# 
+#
 # ~/.local/share/applications/lichess.desktop
 #
 # [Desktop Entry]
