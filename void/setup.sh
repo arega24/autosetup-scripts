@@ -21,7 +21,7 @@ sudo xbps-install mesa-vulkan-radeon -y
 sudo xbps-install mesa-vaapi mesa-vdpau -y 
 
 ## nvidia propriatary (1660 super) (nvidia == latast version; nvidia470 == ver 470)
-#sudo xbps-install nvidia -y 
+#sudo xbps-install nvidia nvidia-libs-32bit -y 
 
 ## power management (desktop)
 #sudo ln -s /etc/sv/acpid/ /var/service/ -y 
