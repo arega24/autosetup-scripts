@@ -75,7 +75,7 @@ $ doas loadkeys fr
 https://wiki.archlinux.org/title/users_and_groups  
 
 ```
-# useradd -m -G wheel,floppy,audio,video,mail,storage,kvm,users,xbuilder -s /bin/bash arega
+# useradd -m -G wheel,floppy,audio,video,mail,storage,kvm,users,xbuilder,input -s /bin/bash arega
 # passwd arega
 ```
 
