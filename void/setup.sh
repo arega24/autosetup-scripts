@@ -16,36 +16,48 @@ sudo xbsp-install -S
 #sudo xbps-reconfigure -fa  # it is necessary to regenerate your initramfs. this comand regenerate all
 
 ## Firmware amd (cpus and gpus)
-sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader xf86-video-amdgpu -y 
-sudo xbps-install mesa-vulkan-radeon -y 
-sudo xbps-install mesa-vaapi mesa-vdpau -y 
+#sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader xf86-video-amdgpu -y 
+#sudo xbps-install mesa-vulkan-radeon -y 
+#sudo xbps-install mesa-vaapi mesa-vdpau -y 
 
 ## nvidia propriatary (1660 super) (nvidia == latast version; nvidia470 == ver 470)
-#sudo xbps-install nvidia nvidia-libs-32bit -y 
+#sudo xbps-install nvidia -y 
 
 ## power management (desktop)
 #sudo ln -s /etc/sv/acpid/ /var/service/ -y 
 #sudo sv status acpid -y 
 
 ## power management (laptop)
-sudo ln -s /etc/sv/acpid/ /var/service/ 
-sudo sv status acpid 
-sudo xbps-install tlp -y 
-sudo ln -s /etc/sv/tlp/ /var/service/ 
-sudo sv status tlp 
+#sudo ln -s /etc/sv/acpid/ /var/service/ 
+#sudo sv status acpid 
+#sudo xbps-install tlp -y 
+#sudo ln -s /etc/sv/tlp/ /var/service/ 
+#sudo sv status tlp 
 
-## Firewall
-sudo xbps-install ufw -y 
-sudo ln -s /etc/sv/ufw/ /var/service/ 
-sudo sv status ufw 
+## dbus
+sudo xbps-install dbus -y 
+sudo ln -s /etc/sv/dbus/ /var/service/ 
+
+## wifi card
+#sudo xbps-install linux-firmware linux-firmware-network
 
 ## iwd (for wifi ,works with eduroam)
-sudo xbps-install iwd linux-firmware linux-firmware-network
-sudo ln -s /etc/sv/iwd /var/service/
+#sudo xbps-install iwd 
+#sudo ln -s /etc/sv/iwd /var/service/
 
-## Eduroam 
-sudo xbps-install python3-dbus
+# network manager
+#sudo xbps-install NetworkManager
+#ln -s /etc/sv/NetworkManager/ /var/service/
+
+
+## Eduroam network manager
+#sudo xbps-install python3-dbus
 # Download python setup scrypt here https://cat.eduroam.org/
+
+## Firewall
+#sudo xbps-install ufw -y 
+#sudo ln -s /etc/sv/ufw/ /var/service/ 
+#sudo sv status ufw 
 
 ## pipewire (setup dbus before)
 sudo xbps-install pipewire pulsemixer pamixer libjack-pipewire alsa-pipewire qpwgraph elogind -y 
@@ -80,9 +92,6 @@ sudo ln -s /etc/sv/statd/ /var/service/
 sudo ln -s /etc/sv/rpcbind/ /var/service/ 
 sudo ln -s /etc/sv/netmount/ /var/service/ 
 
-## dbus
-sudo xbps-install dbus -y 
-sudo ln -s /etc/sv/dbus/ /var/service/ 
 
 ## neovim
 sudo xbps-install neovim yarn nodejs wget pwsh -y  # nodejs and yarn needed for mardown preview 
