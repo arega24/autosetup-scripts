@@ -78,7 +78,7 @@ sudo xbps-install -S base-devel libX11-devel libXft-devel libXinerama-devel xset
 
 ## the rest
 sudo xbps-install pywal python -y 
-sudo xbps-install feh redshift rxvt-unicode picom pfetch zip git xsecurelock htop qalculate keepassxc syncthing flameshot sxiv mpv timeshift -y 
+sudo xbps-install feh redshift rxvt-unicode picom pfetch zip git xsecurelock htop qalculate keepassxc syncthing flameshot sxiv mpv timeshift diskonaut -y 
 sudo xbps-install rofi rofi-calc udisks2 -y 
 sudo xbps-install xdg-utils -y 
 sudo xbps-install libnotify dunst -y
