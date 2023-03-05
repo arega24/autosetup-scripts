@@ -83,7 +83,7 @@ sudo xbps-install rofi rofi-calc udisks2 -y
 sudo xbps-install xdg-utils -y 
 sudo xbps-install libnotify dunst -y
 sudo xbps-install zathura zathura-pdf-poppler -y 
-sudo xbps-install lf ueberzug GraphicsMagick ffmpeg ghostscript zsh trash-cli fzf bat -y 
+sudo xbps-install lf ueberzug GraphicsMagick ffmpeg ghostscript zsh trash-cli fzf bat unrar -y 
 sudo xbps-install plata-theme lxappearance papirus-icon-theme -y 
 
 ## nfs
