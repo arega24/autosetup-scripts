@@ -16,7 +16,7 @@ sudo xbsp-install -S
 #sudo xbps-reconfigure -fa  # it is necessary to regenerate your initramfs. this comand regenerate all
 
 ## Firmware amd (cpus and gpus)
-#sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader xf86-video-amdgpu -y 
+#sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader xf86-video-amdgpu mesa-dri-32bit vulkan-loader-32bit -y 
 #sudo xbps-install mesa-vulkan-radeon -y 
 #sudo xbps-install mesa-vaapi mesa-vdpau -y 
 
