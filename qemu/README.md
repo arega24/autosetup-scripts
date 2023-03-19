@@ -19,7 +19,13 @@ unix_sock_rw_perms = "0770"
 
 ```
 
-Add yourself to the libvert group
+### Add yourself to the libvert group
 ```
 sudo usermod -aG libvirt arega
+```
+Then log in and log out and in 
+
+### Restart libvirtd
+```
+sudo sv restart libvirtd
 ```
