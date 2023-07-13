@@ -1,7 +1,7 @@
 # Logitech g923 suport
 https://github.com/berarma/new-lg4ff
 
-## Folow manual method
+## Follow manual method
 ```
 $ git clone ...
 $ cd ...
