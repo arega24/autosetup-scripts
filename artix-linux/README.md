@@ -9,6 +9,8 @@ https://unixsheikh.com/tutorials/real-full-disk-encryption-using-grub-on-artix-l
 https://web.archive.org/web/20210515073858/https://www.rohlix.eu/post/artix-linux-full-disk-encryption-with-uefi/
 
 https://wiki.artixlinux.org/Main/InstallationWithFullDiskEncryption
+
+https://wiki.artixlinux.org/Main/Installation
 ## Start
 ### ISO
 https://artixlinux.org/download.php
@@ -84,10 +86,69 @@ Format the UEFI boot partition with the Fat filesystem
 ```
 ### Mount the partitions
 ```
+# mount /dev/mapper/artixdisk /mnt
 
+# mkdir -p /mnt/boot/efi
+# mount /dev/sda1 /mnt/boot/efi
 ```
 
-Use the command lsblk -fp to list all the UUIDs of your system.
+## Install Base system
+### Change mirrors (optional)
+If you want you can select the Pacman mirrors by placing the ones you prefer in the top:
+```
+# vi /etc/pacman.d/mirrorlist
+```
+
+### Install the base system
+In this case we are using runit as the init system
+```
+# basestrap /mnt base base-devel runit elogind-runit
+```
+
+### Install a kernel 
+```
+# basestrap /mnt linux linux-firmware
+```
+### Generate and verify fstab
+```
+# fstabgen -U /mnt >> /mnt/etc/fstab
+# cat /mnt/etc/fstab
+```
+
+## chroot
+### chroot into new system
+
+```
+# artix-chroot /mnt
+```
+### Install a text edito
+```
+# pacman -S neovim
+```
+
+### Configure the system clock
+```
+# echo KEYMAP=dk > /etc/vconsole.conf
+# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+# hwclock --systohc
+```
+### Configure localization
+In this file uncomente your locale(can be multiple options for the same location), then run ``locale-gen``
+```
+# nvim /etc/locale.gen
+# locale-gen
+```
+#### To set the locale systemwide
+Add this to ``/etc/locale.conf``
+```
+ export LANG="en_US.UTF-8"     <-- localize in your languages
+ export LC_COLLATE="C"
+```
+ 
+
+Use the command ``lsblk -fp`` to list all the UUIDs of your system
+
+
 
 
 
