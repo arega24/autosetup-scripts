@@ -11,6 +11,8 @@ https://web.archive.org/web/20210515073858/https://www.rohlix.eu/post/artix-linu
 https://wiki.artixlinux.org/Main/InstallationWithFullDiskEncryption
 
 https://wiki.artixlinux.org/Main/Installation
+
+https://wiki.archlinux.org/title/Network_configuration#Set_the_hostname
 ## Start
 ### ISO
 https://artixlinux.org/download.php
@@ -121,9 +123,15 @@ In this case we are using runit as the init system
 ```
 # artix-chroot /mnt
 ```
-### Install a text edito
+### Install a text editor
 ```
 # pacman -S neovim
+```
+Can also install other usefull/needed packages
+```
+pacman -S networkmanager networkmanager-runit   <- network management
+          cryptsetup lvm2 lvm2-runit            <- for decreption of the disk
+          grub efibootmgr                       <- grub and UEFI support
 ```
 
 ### Configure the system clock
@@ -144,11 +152,71 @@ Add this to ``/etc/locale.conf``
  export LANG="en_US.UTF-8"     <-- localize in your languages
  export LC_COLLATE="C"
 ```
+ ### Hostname
  
+```
+# echo "my-hostname" > /etc/hostname
+# cat /etc/hostname
+```
 
-Use the command ``lsblk -fp`` to list all the UUIDs of your system
+### Local network hostname resolution
+Edit ``/etc/hosts`` and add The following:
+*Note that the space is a tab*
+```
+127.0.0.1         localhost
+::1               localhost
+127.0.0.1         my-hostname.localdomain my-hostname
+```
+### Add and edit users 
+```
+# passwd       <- to set root passwd
+# useradd -G wheel -m username
+# passwd username<
+```
+### # mkinitcpio -p linux.conf
+The **/etc/mkinitcpio.conf** file enables to set up various kernel parameters. Within the **HOOKS** part, the **encrypt lvm2** needs to be put between **block** and **filesystems** keywords in order to enable the Full Disk Encryption. It may also be useful to include the resume keyword to enable suspend to disk options. However, this may not work at all times, such as with hardened kernels. 
 
+Insert **encrypt** and **resume**
+*Note that lvm2 shoud be there as well*
+```
+ HOOKS="base udev autodetect modconf block keyboard keymap consolefont lvm2 filesystems fsck"
+```
+should become
+```
+ HOOKS="base udev autodetect modconf block encrypt keyboard keymap consolefont lvm2 resume filesystems fsck"
+```
 
+Update mkinitcpio
+*linux is the kernel I installed. If you install linux-lts or any other you should the name to your's*
+```
+# mkinitcpio -p linux
+```
+## Grub installation
+### Config grub
+Use the command ``lsblk -fp`` to list all the UUIDs of your system. Need to exit chroot to run this command.
 
+*still in chroot*
+```
+# nvim /etc/default/grub
+```
+Edits to the file
+```
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet cryptdevice=UUID=xxx:cryptlvm root=UUID=yyy"
+GRUB_ENABLE_CRYPTODISK=y              <- uncoment this line
+```
+*cryptlvm can be named diferently*
+*root can also be changed to other string*
+xxx = UUID of the root partition (sdX2)
+yyy = UUID of the artixdisk partition (might show below the sdX2 when you run the lsblk command)
 
+### Install the grub boot loader
+Command for UEFI
+Make shure it is instaled into the disk ``/dev/sdX`` and not any partition: ``/dev/sdX1`` or ``/dev/sdX2``
+```
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+```
 
+### Make grub configuration
+```
+# grub-mkconfig -o /boot/grub/grub.cfg
+```
