@@ -57,7 +57,7 @@ sudo pacman -S feh redshift rxvt-unicode picom zip xsecurelock htop libqalculate
 sudo pacman -S libnotify dunst-git udisks2 rofi rofi-calc
 sudo pacman -S zathura zathura-pdf-poppler
 sudo pacman -S lf ueberzug graphicsmagick ffmpeg ghostscript zsh trash-cli fzf bat unrar
-sudo pacman -S lxappearance papirus-icon-theme arc-gtk-theme
+sudo pacman -S lxappearance papirus-icon-theme arc-gtk-theme ttf-jetbrains-mono
 
 ## AUR Dependencies/ useful pkgs
 sudo pacman -S git base-devel 
