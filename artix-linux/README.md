@@ -30,26 +30,26 @@ Open a terminal and run ``sudo su``
 ### Internet
 Verify if there is and internet connection:
 ```
-# ping gnu.org
+ping gnu.org
 ```
 ### Keyboard
 ```
-# ls /usr/share/kbd/keymaps/i386/qwerty/ | grep -i es
-# loadkeys es
+ls /usr/share/kbd/keymaps/i386/qwerty/ | grep -i es
+loadkeys es
 ```
 
 ## Disk partition
 
 ### Locate disk
 ```
-# fdisk -l
+fdisk -l
 ```
 
 Can use the ``cfdisk`` tool
 
 ### Partition disk
 ```
-# cfdisk /dev/sdX
+cfdisk /dev/sdX
 ```
 Now give at least 512M to your UEFI partition and the rest for the root partition.
 
@@ -72,60 +72,60 @@ Device      Start       End   Sectors  Size Type
 
 Only encrypt the root partition
 ```
-# cryptsetup luksFormat --type luks1 /dev/sdX2
+cryptsetup luksFormat --type luks1 /dev/sdX2
 ```
 Open the partition
 ```
-# cryptsetup open /dev/sdX1 artixdisk
+cryptsetup open /dev/sdX1 artixdisk
 ```
 Install the filesystem in the root partition. I'm using XFS. Options (EXT4, XFS, Btrfs, etc.)
 ```
-# mkfs.xfs /dev/mapper/artixdisk
+mkfs.xfs /dev/mapper/artixdisk
 ```
 Format the UEFI boot partition with the Fat filesystem
 ```
-# mkfs.vfat -F32 /dev/sdX1
+mkfs.vfat -F32 /dev/sdX1
 ```
 ### Mount the partitions
 ```
-# mount /dev/mapper/artixdisk /mnt
+mount /dev/mapper/artixdisk /mnt
 
-# mkdir -p /mnt/boot/efi
-# mount /dev/sda1 /mnt/boot/efi
+mkdir -p /mnt/boot/efi
+mount /dev/sda1 /mnt/boot/efi
 ```
 
 ## Install Base system
 ### Change mirrors (optional)
 If you want you can select the Pacman mirrors by placing the ones you prefer in the top:
 ```
-# vi /etc/pacman.d/mirrorlist
+vi /etc/pacman.d/mirrorlist
 ```
 
 ### Install the base system
 In this case we are using runit as the init system
 ```
-# basestrap /mnt base base-devel runit elogind-runit
+basestrap /mnt base base-devel runit elogind-runit
 ```
 
 ### Install a kernel 
 ```
-# basestrap /mnt linux linux-firmware
+basestrap /mnt linux linux-firmware
 ```
 ### Generate and verify fstab
 ```
-# fstabgen -U /mnt >> /mnt/etc/fstab
-# cat /mnt/etc/fstab
+fstabgen -U /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
 ```
 
 ## chroot
 ### chroot into new system
 
 ```
-# artix-chroot /mnt
+artix-chroot /mnt
 ```
 ### Install a text editor
 ```
-# pacman -S neovim
+pacman -S neovim
 ```
 Can also install other usefull/needed packages
 ```
@@ -136,15 +136,15 @@ pacman -S networkmanager networkmanager-runit   <- network management
 
 ### Configure the system clock
 ```
-# echo KEYMAP=dk > /etc/vconsole.conf
-# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
-# hwclock --systohc
+echo KEYMAP=dk > /etc/vconsole.conf
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+hwclock --systohc
 ```
 ### Configure localization
 In this file uncomente your locale(can be multiple options for the same location), then run ``locale-gen``
 ```
-# nvim /etc/locale.gen
-# locale-gen
+nvim /etc/locale.gen
+locale-gen
 ```
 #### To set the locale systemwide
 Add this to ``/etc/locale.conf``
@@ -155,8 +155,8 @@ Add this to ``/etc/locale.conf``
  ### Hostname
  
 ```
-# echo "my-hostname" > /etc/hostname
-# cat /etc/hostname
+echo "my-hostname" > /etc/hostname
+cat /etc/hostname
 ```
 
 ### Local network hostname resolution
@@ -169,9 +169,9 @@ Edit ``/etc/hosts`` and add The following:
 ```
 ### Add and edit users 
 ```
-# passwd       <- to set root passwd
-# useradd -G wheel -m username
-# passwd username<
+passwd       <- to set root passwd
+useradd -G wheel -m username
+passwd username<
 ```
 ### # mkinitcpio -p linux.conf
 The **/etc/mkinitcpio.conf** file enables to set up various kernel parameters. Within the **HOOKS** part, the **encrypt lvm2** needs to be put between **block** and **filesystems** keywords in order to enable the Full Disk Encryption. It may also be useful to include the resume keyword to enable suspend to disk options. However, this may not work at all times, such as with hardened kernels. 
@@ -197,7 +197,7 @@ Use the command ``lsblk -fp`` to list all the UUIDs of your system. Need to exit
 
 *still in chroot*
 ```
-# nvim /etc/default/grub
+nvim /etc/default/grub
 ```
 Edits to the file
 ```
@@ -218,5 +218,14 @@ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 
 ### Make grub configuration
 ```
-# grub-mkconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## Finish
+Unmount drives and revoot
+```
+exit                <- to exit chroot
+
+umount -R /mnt      <- unmounts all disk drives
+reboot
 ```
