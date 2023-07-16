@@ -63,6 +63,10 @@ sudo pacman -S lxappearance papirus-icon-theme arc-gtk-theme ttf-jetbrains-mono
 
 ## AUR Dependencies/ useful pkgs
 sudo pacman -S git base-devel 
+git clone https://aur.archlinux.org/yay.git 
+cd yay
+makepkg -si
+cd
 
 ## AUR PKGS
-# yay -Ss pfetch timeshift brillo
+# yay -Ss pfetch timeshift brillo librewolf-bin 
