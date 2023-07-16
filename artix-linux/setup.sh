@@ -8,6 +8,8 @@
 sudo pacman -S xorg
 
 ## GPU - uncoment the right one
+## Might need to enable Artix [lib32] and Arch [multilib] repositories in /etc/pacman.conf
+
 ## NVIDIA drivers (Proprietary)
 # sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
 
