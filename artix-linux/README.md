@@ -144,10 +144,13 @@ hwclock --systohc
 ```
 ### Configure localization
 In this file uncomente your locale(can be multiple options for the same location), then run ``locale-gen``
+
+*Note that in locale.gen you uncoment the ones you want to add in locale.conf*
 ```
 nvim /etc/locale.gen
 locale-gen
 ```
+*Note that in locale.gen you uncoment the ones you want to add in locale.conf*
 #### To set the locale systemwide
 Add this to ``/etc/locale.conf``
 ```
