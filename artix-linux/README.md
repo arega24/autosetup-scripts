@@ -207,8 +207,11 @@ GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet cryptdevice=UUID=xxx:cryptlvm root=
 GRUB_ENABLE_CRYPTODISK=y              <- uncoment this line
 ```
 *cryptlvm can be named diferently*
+
 *root can also be changed to other string*
+
 xxx = UUID of the root partition (sdX2)
+
 yyy = UUID of the artixdisk partition (might show below the sdX2 when you run the lsblk command)
 
 ### Install the grub boot loader
