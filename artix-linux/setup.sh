@@ -56,7 +56,7 @@ xdg-mime default sxiv.desktop image/png
 ## The rest
 sudo pacman -S python-pywal
 sudo pacman -S feh redshift rxvt-unicode picom zip xsecurelock htop libqalculate keepassxc syncthing flameshot sxiv mpv diskonaut        
-sudo pacman -S libnotify dunst-git udisks2 rofi rofi-calc
+sudo pacman -S libnotify dunst udisks2 rofi rofi-calc
 sudo pacman -S zathura zathura-pdf-poppler
 sudo pacman -S lf ueberzug graphicsmagick ffmpeg ghostscript zsh trash-cli fzf bat unrar
 sudo pacman -S lxappearance papirus-icon-theme arc-gtk-theme ttf-jetbrains-mono
