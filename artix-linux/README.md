@@ -121,7 +121,7 @@ cat /mnt/etc/fstab
 ### chroot into new system
 
 ```
-artix-chroot /mnt
+artix-chroot /mnt bash
 ```
 ### Install a text editor
 ```
