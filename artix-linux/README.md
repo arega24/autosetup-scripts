@@ -142,6 +142,9 @@ echo KEYMAP=pt-latin1 > /etc/vconsole.conf
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 hwclock --systohc
 ```
+You might need to use ntpd for that,if this doesnt work
+
+https://wiki.archlinux.org/title/Network_Time_Protocol_daemon#Usage
 ### Configure localization
 In this file uncomente your locale(can be multiple options for the same location), then run ``locale-gen``
 
