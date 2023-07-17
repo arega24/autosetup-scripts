@@ -152,7 +152,7 @@ Add this to ``/etc/locale.conf``
  export LANG="en_US.UTF-8"     <-- localize in your languages
  export LC_COLLATE="C"
 ```
- ### Hostname
+### Hostname
  
 ```
 echo "my-hostname" > /etc/hostname
@@ -173,7 +173,7 @@ passwd       <- to set root passwd
 useradd -G wheel -m username
 passwd username
 ```
-### # mkinitcpio -p linux.conf
+### mkinitcpio
 The **/etc/mkinitcpio.conf** file enables to set up various kernel parameters. Within the **HOOKS** part, the **encrypt lvm2** needs to be put between **block** and **filesystems** keywords in order to enable the Full Disk Encryption. It may also be useful to include the resume keyword to enable suspend to disk options. However, this may not work at all times, such as with hardened kernels. 
 
 Insert **encrypt** and **resume**
@@ -189,7 +189,7 @@ should become
 Update mkinitcpio
 *linux is the kernel I installed. If you install linux-lts or any other you should the name to your's*
 ```
-# mkinitcpio -p linux
+mkinitcpio -p linux
 ```
 ## Grub installation
 ### Config grub
