@@ -151,8 +151,8 @@ locale-gen
 #### To set the locale systemwide
 Add this to ``/etc/locale.conf``
 ```
- export LANG="en_US.UTF-8"     <-- localize in your languages
- export LC_COLLATE="C"
+LANG="en_US.UTF-8"     <-- localize in your languages
+LC_COLLATE="C"
 ```
 ### Hostname
  
