@@ -165,7 +165,7 @@ Edit ``/etc/hosts`` and add The following:
 ```
 127.0.0.1         localhost
 ::1               localhost
-127.0.0.1         my-hostname.localdomain my-hostname
+127.0.1.1         my-hostname.localdomain my-hostname
 ```
 ### Add and edit users 
 ```
