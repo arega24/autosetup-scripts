@@ -152,6 +152,7 @@ locale-gen
 Add this to ``/etc/locale.conf``
 ```
 LANG="en_US.UTF-8"     <-- localize in your languages
+LC_ALL="en_US.UTF-8"
 LC_COLLATE="C"
 ```
 ### Hostname
