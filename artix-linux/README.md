@@ -227,6 +227,13 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Finish
+
+### Activate NetworkManager
+```
+sudo ln -s /etc/runit/sv/networkmanager /run/runit/service
+```
+Later can edit connection with the ``nmtui`` command
+### unmount and reboot
 Unmount drives and revoot
 ```
 exit                <- to exit chroot
