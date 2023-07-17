@@ -248,3 +248,6 @@ exit                <- to exit chroot
 umount -R /mnt      <- unmounts all disk drives
 reboot
 ```
+
+# Config
+add line ``arega ALL=(ALL:ALL) NOPASSWD:/home/arega/.config/scripts/rofi-powermenu.sh`` for rofi-powermenu to run
