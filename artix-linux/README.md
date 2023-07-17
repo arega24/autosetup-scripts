@@ -91,7 +91,7 @@ mkfs.vfat -F32 /dev/sdX1
 mount /dev/mapper/artixdisk /mnt
 
 mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
+mount /dev/sdaX1 /mnt/boot/efi
 ```
 
 ## Install Base system
