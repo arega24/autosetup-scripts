@@ -1,4 +1,4 @@
-# Artix linux install guide for legacy
+# Artix linux install guide for uefi
 This guide is for an artix linux encrypted install using runit as the init system.
 In my expirience UEFI is more dificult to setup and don't guive mutch benefit
 
@@ -66,7 +66,7 @@ Disklabel type: gpt
 Disk identifier: EE4F2A1A-8E7F-48CA-B3D0-BD7A01F6D8A0
 
 Device      Start       End   Sectors  Size Type
-/dev/sdX1    2048    264191    262144  512M BIOS boot
+/dev/sdX1    2048    264191    262144  512M EFI System 
 /dev/sdX2  264192 100663262 100399071 47.9G Linux filesystem
 ```
 ### Encrypt volume 
@@ -204,7 +204,6 @@ nvim /etc/default/grub
 Edits to the file
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet cryptdevice=UUID=xxx:cryptlvm root=UUID=yyy"
-GRUB_ENABLE_CRYPTODISK=y              <- uncoment this line
 ```
 *cryptlvm can be named diferently*
 
@@ -222,10 +221,6 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=artix
 ```
 *bootloader-id=artix is what appears in the bios*
 
-#### legacy
-```
-grub-install /dev/sdX
-```
 ### Make grub configuration
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
