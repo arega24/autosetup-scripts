@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/bin/bash sh
 
 ## post install script 
 ## Run this to install required packages
