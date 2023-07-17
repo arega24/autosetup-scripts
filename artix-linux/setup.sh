@@ -18,18 +18,18 @@ sudo pacman -S xorg
 
 ## dbus
 sudo pacman -S dbus dbus-runit
-sudo ln -s /etc/runit/sv/dbus-runit /run/runit/service
+sudo ln -s /etc/runit/sv/dbus /run/runit/service
 
 ## TLP- For laptop batery
 # sudo pacman -S tlp tlp-runit
-# sudo ln -s /etc/runit/sv/tlp-runit /run/runit/service
+# sudo ln -s /etc/runit/sv/tlp /run/runit/service
 
 ## networkmanager
-sudo ln -s /etc/runit/sv/networkmanager-runit /run/runit/service 
+sudo ln -s /etc/runit/sv/networkmanager /run/runit/service 
 
 ## firewall
 sudo pacman -S ufw-runit ufw
-sudo ln -s /etc/runit/sv/ufw-runit /run/runit/service 
+sudo ln -s /etc/runit/sv/ufw /run/runit/service 
 sudo ufw limit 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
