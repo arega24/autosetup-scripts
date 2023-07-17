@@ -24,8 +24,8 @@ sudo ln -s /etc/runit/sv/dbus /run/runit/service
 # sudo pacman -S tlp tlp-runit
 # sudo ln -s /etc/runit/sv/tlp /run/runit/service
 
-## networkmanager
-sudo ln -s /etc/runit/sv/networkmanager /run/runit/service 
+## networkmanager in case its not enabled yet
+#sudo ln -s /etc/runit/sv/networkmanager /run/runit/service 
 
 ## firewall
 sudo pacman -S ufw-runit ufw
