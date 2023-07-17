@@ -218,7 +218,7 @@ yyy = UUID of the artixdisk partition (might show below the sdX2 when you run th
 Command for UEFI
 Make shure it is instaled into the disk ``/dev/sdX`` and not any partition: ``/dev/sdX1`` or ``/dev/sdX2``
 ```
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub /dev/sdX --recheck
 ```
 
 ### Make grub configuration
