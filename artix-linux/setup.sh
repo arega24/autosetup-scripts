@@ -69,4 +69,4 @@ makepkg -si
 cd
 
 ## AUR PKGS
-# yay -Ss pfetch timeshift brillo librewolf-bin 
+yay -Ss pfetch timeshift brillo librewolf-bin 
