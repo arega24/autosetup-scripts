@@ -138,7 +138,7 @@ pacman -S networkmanager networkmanager-runit   <- network management
 
 ### Configure the system clock
 ```
-echo KEYMAP=dk > /etc/vconsole.conf
+echo KEYMAP=pt-latin1 > /etc/vconsole.conf
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 hwclock --systohc
 ```
