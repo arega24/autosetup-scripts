@@ -145,6 +145,12 @@ hwclock --systohc
 You might need to use ntpd for that,if this doesnt work
 
 https://wiki.archlinux.org/title/Network_Time_Protocol_daemon#Usage
+```
+sudo pacman -S ntp ntp-runit
+sudo ln -s /etc/runit/sv/ntpd /run/runit/service
+sudo ntpd -qg
+```
+
 ### Configure localization
 In this file uncomente your locale(can be multiple options for the same location), then run ``locale-gen``
 
