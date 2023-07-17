@@ -174,7 +174,7 @@ useradd -G wheel -m username
 passwd username
 ```
 ### mkinitcpio
-The **/etc/mkinitcpio.conf** file enables to set up various kernel parameters. Within the **HOOKS** part, the **encrypt lvm2** needs to be put between **block** and **filesystems** keywords in order to enable the Full Disk Encryption. It may also be useful to include the resume keyword to enable suspend to disk options. However, this may not work at all times, such as with hardened kernels. 
+The ``/etc/mkinitcpio.conf`` file enables to set up various kernel parameters. Within the **HOOKS** part, the **encrypt lvm2** needs to be put between **block** and **filesystems** keywords in order to enable the Full Disk Encryption. It may also be useful to include the resume keyword to enable suspend to disk options. However, this may not work at all times, such as with hardened kernels. 
 
 Insert **encrypt** and **resume**
 *Note that lvm2 shoud be there as well*
