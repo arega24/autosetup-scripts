@@ -66,10 +66,9 @@ Disklabel type: gpt
 Disk identifier: EE4F2A1A-8E7F-48CA-B3D0-BD7A01F6D8A0
 
 Device      Start       End   Sectors  Size Type
-/dev/sdX1    2048    264191    262144  512M EFI System
+/dev/sdX1    2048    264191    262144  512M BIOS boot
 /dev/sdX2  264192 100663262 100399071 47.9G Linux filesystem
 ```
-*The /dev/sdX1 dont need to be an EFI System for legacy boot*
 ### Encrypt volume 
 
 Only encrypt the root partition
