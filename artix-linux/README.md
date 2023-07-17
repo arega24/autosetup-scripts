@@ -1,6 +1,6 @@
-# Artix linux install guide for UEFI
+# Artix linux install guide for legacy
 This guide is for an artix linux encrypted install using runit as the init system.
-
+In my expirience UEFI is more dificult to setup and don't guive mutch benefit
 
 see also:
 
@@ -33,6 +33,7 @@ Verify if there is and internet connection:
 ping gnu.org
 ```
 ### Keyboard
+Can be set when you boot from the usb
 ```
 ls /usr/share/kbd/keymaps/i386/qwerty/ | grep -i es
 loadkeys es
@@ -51,7 +52,7 @@ Can use the ``cfdisk`` tool
 ```
 cfdisk /dev/sdX
 ```
-Now give at least 512M to your UEFI partition and the rest for the root partition.
+Give at least 512M to your boot partition and the rest for the root partition.
 
 
 Exemple:
@@ -68,6 +69,7 @@ Device      Start       End   Sectors  Size Type
 /dev/sdX1    2048    264191    262144  512M EFI System
 /dev/sdX2  264192 100663262 100399071 47.9G Linux filesystem
 ```
+*The /dev/sdX1 dont need to be an EFI System for legacy boot*
 ### Encrypt volume 
 
 Only encrypt the root partition
@@ -82,7 +84,7 @@ Install the filesystem in the root partition. I'm using XFS. Options (EXT4, XFS,
 ```
 mkfs.xfs /dev/mapper/artixdisk
 ```
-Format the UEFI boot partition with the Fat filesystem
+Format the boot partition with the Fat filesystem
 ```
 mkfs.vfat -F32 /dev/sdX1
 ```
@@ -90,8 +92,8 @@ mkfs.vfat -F32 /dev/sdX1
 ```
 mount /dev/mapper/artixdisk /mnt
 
-mkdir -p /mnt/boot/efi
-mount /dev/sdaX1 /mnt/boot/efi
+mkdir -p /mnt/boot
+mount /dev/sdaX1 /mnt/boot
 ```
 
 ## Install Base system
@@ -131,7 +133,8 @@ Can also install other usefull/needed packages
 ```
 pacman -S networkmanager networkmanager-runit   <- network management
           cryptsetup lvm2 lvm2-runit            <- for decreption of the disk
-          grub efibootmgr                       <- grub and UEFI support
+          grub                                  <- grub
+          efibootmgr                            <- UEFI support
 ```
 
 ### Configure the system clock
@@ -216,9 +219,13 @@ yyy = UUID of the artixdisk partition (might show below the sdX2 when you run th
 Command for UEFI
 Make shure it is instaled into the disk ``/dev/sdX`` and not any partition: ``/dev/sdX1`` or ``/dev/sdX2``
 ```
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub /dev/sdX --recheck
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 ```
 
+legacy
+```
+grub-install /dev/sdX
+```
 ### Make grub configuration
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
