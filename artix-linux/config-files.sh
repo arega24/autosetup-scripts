@@ -21,6 +21,6 @@ cp -r dwm-dots/sxiv/ ~/.config/
 cp -r dwm-dots/wal/ ~/.config/ 
 cp -r dwm-dots/zathura/ ~/.config/ 
 
-cp dwm-dots/Xresources ~/.Xresources &
+cp dwm-dots/Xresources ~/.Xresources 
 cp dwm-dots/xinitrc ~/.xinitrc 
 cp dwm-dots/bashrc ~/.bashrc 
