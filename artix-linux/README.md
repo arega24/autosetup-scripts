@@ -256,4 +256,13 @@ reboot
 ```
 
 # Config
+on ``/etc/sudoers``
+
+add
+```
+username ALL=(ALL:ALL) ALL
+```
+
 add line ``username ALL=(ALL:ALL) NOPASSWD:/home/arega/.config/scripts/rofi-powermenu.sh`` for rofi-powermenu to run
+
+add ``username ALL=(ALL:ALL) NOPASSWD:/bin/brillo`` for brillo to run with dwm
