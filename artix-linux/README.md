@@ -243,7 +243,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ### Activate NetworkManager
 ```
-sudo ln -s /etc/runit/sv/networkmanager /run/runit/service
+sudo ln -s /etc/runit/sv/NetworkManager /run/runit/service
 ```
 Later can edit connection with the ``nmtui`` command
 ### unmount and reboot
