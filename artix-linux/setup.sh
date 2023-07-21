@@ -71,3 +71,14 @@ sudo pacman -S xdg-utils
 xdg-mime default firefox.desktop x-scheme-handler/https x-scheme-handler/http 
 xdg-mime default sxiv.desktop image/jpeg 
 xdg-mime default sxiv.desktop image/png 
+
+## make rofi-calc from source
+git clone https://github.com/svenstaro/rofi-calc.git
+cd rofi-calc/
+mkdir m4
+autoreconf -i
+mkdir build
+cd build/
+../configure
+sudo make
+sudo make install
