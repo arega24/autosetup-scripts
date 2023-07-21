@@ -56,7 +56,7 @@ cd
 
 ## The rest
 sudo pacman -S python-pywal 
-yay -S pfetch timeshift brillo librewolf-bin 
+yay -S pfetch timeshift brillo librewolf-bin logseq-desktop-bin
 yay -S feh redshift rxvt-unicode picom zip xsecurelock htop libqalculate keepassxc syncthing flameshot sxiv mpv diskonaut       
 yay -S libnotify dunst udisks2 rofi rofi-calc 
 yay -S zathura zathura-pdf-poppler 
