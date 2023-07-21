@@ -39,7 +39,7 @@ sudo ufw enable
 sudo ufw status 
 
 ## pipewire
-sudo pacman -S pipewire lib32-pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack pamixer-git rtkit 
+sudo pacman -S pipewire lib32-pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack rtkit 
 
 ## nfs
 sudo pacman -S nfs-utils 
@@ -62,6 +62,9 @@ yay -S libnotify dunst udisks2 rofi rofi-calc
 yay -S zathura zathura-pdf-poppler 
 yay -S lf ueberzug graphicsmagick ffmpeg ghostscript zsh trash-cli fzf bat unrar 
 yay -S lxappearance papirus-icon-theme arc-gtk-theme ttf-jetbrains-mono 
+## pamixer and a dependency
+yay -S cxxopts-git
+yay -S pamixer-git
 
 ## xdg
 sudo pacman -S xdg-utils 
