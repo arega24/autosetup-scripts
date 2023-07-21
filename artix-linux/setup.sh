@@ -1,4 +1,4 @@
-## post install script 
+ post install script 
 ## Run this to install required packages
 ## read and uncomment the required lines 
 
