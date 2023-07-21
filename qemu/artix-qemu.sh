@@ -1,3 +1,2 @@
-#!/bin/env sh
-
+#!/usr/bin/env sh
 # make file from scratch
