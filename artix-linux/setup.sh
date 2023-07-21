@@ -39,7 +39,7 @@ sudo ufw enable
 sudo ufw status 
 
 ## pipewire
-sudo pacman -S pipewire lib32-pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack rtkit 
+sudo pacman -S pipewire lib32-pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack pamixer-git rtkit 
 
 ## nfs
 sudo pacman -S nfs-utils 
