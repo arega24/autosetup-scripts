@@ -263,6 +263,6 @@ add
 username ALL=(ALL:ALL) ALL
 ```
 
-add line ``username ALL=(ALL:ALL) NOPASSWD:/home/arega/.config/scripts/rofi-powermenu.sh`` for rofi-powermenu to run
+add line ``username ALL=(root) NOPASSWD:/home/arega/.config/scripts/rofi-powermenu.sh`` for rofi-powermenu to run
 
-add ``username ALL=(ALL:ALL) NOPASSWD:/bin/brillo`` for brillo to run with dwm
+add ``username ALL=(root) NOPASSWD:/bin/brillo`` for brillo to run with dwm
