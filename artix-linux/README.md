@@ -177,7 +177,7 @@ cat /etc/hostname
 ### Local network hostname resolution
 Edit ``/etc/hosts`` and add The following:
 
-*Note that the space is a tab*
+*Note that the space is a tab and make shure to change "my-hostname" whit your hostname*
 ```
 127.0.0.1         localhost
 ::1               localhost
@@ -256,4 +256,4 @@ reboot
 ```
 
 # Config
-add line ``arega ALL=(ALL:ALL) NOPASSWD:/home/arega/.config/scripts/rofi-powermenu.sh`` for rofi-powermenu to run
+add line ``username ALL=(ALL:ALL) NOPASSWD:/home/arega/.config/scripts/rofi-powermenu.sh`` for rofi-powermenu to run
