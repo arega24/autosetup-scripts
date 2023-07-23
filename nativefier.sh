@@ -17,6 +17,8 @@ sudo nativefier --name 'Prosperous Universe' 'https://prosperousuniverse.com/aut
 sudo nativefier --name 'Odysee' 'https://odysee.com/' 
 sudo nativefier --name 'Kick' 'https://kick.com/' 
 
+mkdir -p ~/.local/share/applications/
+
 # Exe of a desktop entry file 
 #
 # ~/.local/share/applications/lichess.desktop
