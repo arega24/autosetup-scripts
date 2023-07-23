@@ -62,7 +62,7 @@ makepkg -si
 cd 
 
 ## The rest
-sudo pacman -S python-pywal 
+sudo pacman -S python-pywal cmus
 yay -S pfetch timeshift brillo librewolf-bin logseq-desktop-bin
 yay -S feh redshift rxvt-unicode picom zip xsecurelock htop libqalculate keepassxc syncthing flameshot sxiv mpv diskonaut       
 yay -S libnotify dunst udisks2 rofi rofi-calc playerctl
