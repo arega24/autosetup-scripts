@@ -256,6 +256,7 @@ reboot
 ```
 
 # Config
+## Sudoers
 on ``/etc/sudoers``
 
 add
@@ -266,3 +267,10 @@ username ALL=(ALL:ALL) ALL
 add line ``username ALL=(root) NOPASSWD:/home/arega/.config/scripts/rofi-powermenu.sh`` for rofi-powermenu to run
 
 add ``username ALL=(root) NOPASSWD:/bin/brillo`` for brillo to run with dwm
+
+## Multilib
+
+Might need to enable Artix [lib32] and Arch [multilib] repositories in /etc/pacman.conf
+
+This is needed for steam /games and gpu drivers
+
