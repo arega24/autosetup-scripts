@@ -39,10 +39,15 @@ sudo ufw enable
 sudo ufw status 
 
 ## pipewire
-sudo pacman -S pipewire lib32-pipewire pipewire-pulse rtkit wireplumber
+sudo pacman -S pipewire pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire rtkit wireplumber
 
 ## nfs
 sudo pacman -S nfs-utils 
+
+## ntp (clock)
+sudo pacman -S ntp ntp-runit
+sudo ln -s /etc/runit/sv/ntpd /run/runit/service
+sudo ntpd -qg
 
 ## neovim
 sudo pacman -S neovim wget 
