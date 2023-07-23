@@ -21,3 +21,8 @@ mkdir ~/Imagens
 mkdir ~/Documentos
 mkdir ~/Desktop
 mkdir ~/Downloads
+
+sudo mkdir -p /media/Shared/
+sudo mkdir -p /media/Music/
+sudo mkdir -p /media/Movies/
+sudo mkdir -p /media/Series/
