@@ -3,7 +3,7 @@
 # Void
 #sudo xbps-install nodejs 
 # Artix
-#sudo pacman -S nodejs npm
+sudo pacman -S nodejs npm
 
 sudo npm update -g 
 sudo npm install -g nativefier 
@@ -16,6 +16,7 @@ sudo nativefier --name 'Twitch' 'twitch.tv'
 sudo nativefier --name 'Prosperous Universe' 'https://prosperousuniverse.com/auth/login/?od=https://apex.prosperousuniverse.com/' 
 sudo nativefier --name 'Odysee' 'https://odysee.com/' 
 sudo nativefier --name 'Kick' 'https://kick.com/' 
+sudo nativefier --name 'Syncthing' 'http://127.0.0.1:8384/' 
 
 mkdir -p ~/.local/share/applications/
 cp -r ~/autosetup-scripts/nativefier/applications/* ~/.local/share/applications/
