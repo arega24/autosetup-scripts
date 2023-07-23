@@ -22,7 +22,7 @@ mkdir ~/Documentos
 mkdir ~/Desktop
 mkdir ~/Downloads
 
-sudo mkdir -p /Documentos/NAS/Shared/
-sudo mkdir -p /Documentos/NAS/Music/
-sudo mkdir -p /Documentos/NAS/Movies/
-sudo mkdir -p /Documentos/NAS/Series/
+mkdir -p /Documentos/NAS/Shared/
+mkdir -p /Documentos/NAS/Music/
+mkdir -p /Documentos/NAS/Movies/
+mkdir -p /Documentos/NAS/Series/
