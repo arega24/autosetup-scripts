@@ -42,7 +42,9 @@ sudo ufw status
 sudo pacman -S pipewire pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire rtkit wireplumber
 
 ## nfs
-sudo pacman -S nfs-utils 
+sudo pacman -S nfs-utils nfs-utils-runit rpcbind rpcbind-runit
+sudo ln -s /etc/runit/sv/rpcbind/ /run/runit/service/
+sudo ln -s /etc/runit/sv/nfs-server/ /run/runit/service/
 
 ## ntp (clock)
 sudo pacman -S ntp ntp-runit
