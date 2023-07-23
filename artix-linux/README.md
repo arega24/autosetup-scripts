@@ -277,7 +277,7 @@ This is needed for steam /games and gpu drivers
 
 in ``/etc/pacman.conf``
 
-paste
+paste this in the file
 ```
 [universe]
 Server = https://universe.artixlinux.org/$arch
@@ -289,7 +289,16 @@ Server = https://ftp.crifo.org/artix-universe/$arch
 Server = https://artix.sakamoto.pl/universe/$arch
 # TOR
 Server = http://rrtovkpcaxl6s2ommj5tigyxamzxaknasd74ecb5t5cdfnkodirjnwyd.onion/artixlinux/$arch
+```
+then update and download arch repos suport
+```
+sudo pacman -Sy
+sudo pacman -S artix-archlinux-support
+```
+add arch repos to the file by pasting this in the file
 
+*Might just add the extra repo*
+```
 # Arch
 [extra]
 Include = /etc/pacman.d/mirrorlist-arch
@@ -300,8 +309,3 @@ Include = /etc/pacman.d/mirrorlist-arch
 [multilib]
 Include = /etc/pacman.d/mirrorlist-arch
 ```
-then
-```
-sudo pacman -Sy
-```
-
