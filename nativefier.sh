@@ -3,7 +3,7 @@
 # Void
 #sudo xbps-install nodejs 
 # Artix
-#sudo pacman -S nodejs
+#sudo pacman -S nodejs npm
 
 sudo npm update -g 
 sudo npm install -g nativefier 
