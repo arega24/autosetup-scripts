@@ -6,7 +6,7 @@
 # steam
 sudo pacman -S steam ttf-liberation
 # wine
-yay -S wine-stable
+sudo pacman -S wine
 # lutris
 sudo pacman -S lutris 
 # controler and wheel suport
