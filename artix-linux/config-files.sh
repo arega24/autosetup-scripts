@@ -2,7 +2,7 @@
 
 cd 
 git clone https://github.com/arega24/suckless-dwm 
-git clone https://github.com/arega24/dwm-dots 
+git clone https://github.com/arega24/dwm-dots-artix
 git clone https://github.com/arega24/Neovim 
 mkdir .config 
 cp -r suckless-dwm/dwm-6.4-patched .config/ 
