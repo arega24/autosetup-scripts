@@ -18,6 +18,7 @@ sudo nativefier --name 'Odysee' 'https://odysee.com/'
 sudo nativefier --name 'Kick' 'https://kick.com/' 
 
 mkdir -p ~/.local/share/applications/
+cp -r ~/autosetup-scripts/nativefier/applications/* ~/.local/share/applications/
 
 # Exe of a desktop entry file 
 #
