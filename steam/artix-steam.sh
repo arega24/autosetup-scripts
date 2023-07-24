@@ -11,7 +11,7 @@ sudo pacman -S wine
 sudo pacman -S lutris 
 
 # Controler dont need adicional pkgs
-# wheel suport g923
+# wheel suport g923 (need to reboot after)
 sudo pacman -S joyutils
 yay -S oversteer new-lg4ff-dkms-git
 
