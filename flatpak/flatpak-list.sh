@@ -1,9 +1,9 @@
-#!/bin/env sh
+#!/usr/bin/env sh
 
+flatpak install flathub com.github.tchx84.Flatseal
+flatpak install flathub org.clementine_player.Clementine
 
-sudo flatpak install flathub com.github.tchx84.Flatseal
-
-sudo flatpak install flathub de.shorsh.discord-screenaudio
+flatpak install flathub de.shorsh.discord-screenaudio
 # sudo flatpak install flathub com.discordapp.Discord
 # sudo flatpak install flathub com.logseq.Logseq
 
