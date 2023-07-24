@@ -5,6 +5,6 @@ flatpak install flathub org.clementine_player.Clementine
 
 # Discord with audio on screen sharing
 flatpak install flathub de.shorsh.discord-screenaudio
-# sudo flatpak install flathub com.discordapp.Discord
-# sudo flatpak install flathub com.logseq.Logseq
+# flatpak install flathub com.discordapp.Discord
+# flatpak install flathub com.logseq.Logseq
 
