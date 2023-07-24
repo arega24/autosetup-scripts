@@ -9,6 +9,10 @@ sudo pacman -S steam ttf-liberation
 sudo pacman -S wine
 # lutris
 sudo pacman -S lutris 
-# controler and wheel suport
+
+# Controler dont need adicional pkgs
+# wheel suport g923
+sudo pacman -S joyutils
+yay -S oversteer new-lg4ff-dkms-git
 
 
