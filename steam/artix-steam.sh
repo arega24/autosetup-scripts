@@ -12,7 +12,8 @@ sudo pacman -S lutris
 
 # Controler dont need adicional pkgs
 # wheel suport g923 (need to reboot after)
-sudo pacman -S joyutils
+# !! The headers pkg depends on the kernel in use. (ex: If you use the zen kernel its "linux-zen-headers" same for lts and others)
+sudo pacman -S joyutils linux-headers 
 yay -S oversteer new-lg4ff-dkms-git
 
 
