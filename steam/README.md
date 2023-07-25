@@ -13,7 +13,9 @@ $ sudo make load
 
 $ sudo dmesg
 ```
+*For arch just download the aur pkg*
 
+For some games to work you need to enable steam input for you controler(steam controller settings) and then force the game to use steam input(Game properties)
 ## oversteer
 https://github.com/berarma/oversteer
 
