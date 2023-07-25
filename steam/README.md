@@ -18,6 +18,7 @@ $ sudo dmesg
 For some games to work you need to enable steam input for you controler(steam controller settings) and then force the game to use steam input(Game properties)
 
 On Beam NG set Set Update Type to Full and enable logitech features
+
 ## oversteer
 https://github.com/berarma/oversteer
 
