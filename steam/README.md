@@ -15,9 +15,9 @@ $ sudo dmesg
 ```
 *For arch just download the aur pkg*
 
-For some games to work you need to enable steam input for you controler(steam controller settings) and then force the game to use steam input(Game properties)
+For some games to work you need to enable steam input for you controler(steam controller settings) and then force the game to use steam input(Game properties) (ex:Project cars 2)
 
-On Beam NG set Set Update Type to Full and enable logitech features
+On Beam NG set Set Update Type to Full and enable logitech features (+ step before)
 
 ## oversteer
 https://github.com/berarma/oversteer
