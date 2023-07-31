@@ -10,7 +10,7 @@ sudo pacman -S wine
 # lutris
 sudo pacman -S lutris 
 # heroic games
-yay -S heroic-games-launcher-bin
+flatpak install flathub com.heroicgameslauncher.hgl
 
 # Controler dont need adicional pkgs
 # wheel suport g923 (need to reboot after)
