@@ -9,6 +9,8 @@ sudo pacman -S steam ttf-liberation
 sudo pacman -S wine
 # lutris
 sudo pacman -S lutris 
+# bottles
+yay -S bottles
 
 # Controler dont need adicional pkgs
 # wheel suport g923 (need to reboot after)
