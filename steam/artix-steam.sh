@@ -10,7 +10,7 @@ sudo pacman -S wine
 # lutris
 sudo pacman -S lutris 
 # bottles
-yay -S bottles
+flatpak install flathub com.usebottles.bottles
 
 # Controler dont need adicional pkgs
 # wheel suport g923 (need to reboot after)
