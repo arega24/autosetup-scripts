@@ -66,7 +66,7 @@ sudo pacman -S python-pywal cmus
 yay -S pfetch timeshift brillo librewolf-bin logseq-desktop-bin
 yay -S feh redshift rxvt-unicode picom zip xsecurelock htop libqalculate keepassxc syncthing flameshot sxiv mpv diskonaut       
 yay -S libnotify dunst udisks2 rofi rofi-calc playerctl
-yay -S zathura zathura-pdf-poppler 
+yay -S zathura-git zathura-pdf-poppler-git 
 yay -S lf ueberzug graphicsmagick ffmpeg ghostscript zsh trash-cli fzf bat unrar 
 yay -S lxappearance papirus-icon-theme arc-gtk-theme ttf-jetbrains-mono 
 
