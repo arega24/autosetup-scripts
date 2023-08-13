@@ -79,6 +79,7 @@ sudo pacman -S xdg-utils
 xdg-mime default firefox.desktop x-scheme-handler/https x-scheme-handler/http 
 xdg-mime default sxiv.desktop image/jpeg 
 xdg-mime default sxiv.desktop image/png 
+xdg-mime default zathura.desktop application/pdf 
 
 ## make rofi-calc from source
 git clone https://github.com/svenstaro/rofi-calc.git
