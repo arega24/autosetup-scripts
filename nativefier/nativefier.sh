@@ -10,13 +10,15 @@ sudo npm install -g nativefier
 mkdir -p ~/Documentos/Nativefier/ 
 cd ~/Documentos/Nativefier/ 
 
-sudo nativefier --name 'Lichess' 'lichess.org' 
-sudo nativefier --name 'Piped' 'https://piped.kavin.rocks/' 
-sudo nativefier --name 'Twitch' 'twitch.tv' 
-sudo nativefier --name 'Prosperous Universe' 'https://prosperousuniverse.com/auth/login/?od=https://apex.prosperousuniverse.com/' 
-sudo nativefier --name 'Odysee' 'https://odysee.com/' 
-sudo nativefier --name 'Kick' 'https://kick.com/' 
-sudo nativefier --name 'Syncthing' 'http://127.0.0.1:8384/' 
+nativefier --name 'Lichess' 'lichess.org' 
+nativefier --name 'Piped' 'https://piped.kavin.rocks/' 
+nativefier --name 'Twitch' 'twitch.tv' 
+nativefier --name 'Prosperous Universe' 'https://prosperousuniverse.com/auth/login/?od=https://apex.prosperousuniverse.com/' 
+nativefier --name 'Odysee' 'https://odysee.com/' 
+nativefier --name 'Kick' 'https://kick.com/' 
+nativefier --name 'Syncthing' 'http://127.0.0.1:8384/' 
+nativefier --name 'Duolingo' 'https://www.duolingo.com/' 
+nativefier --name 'Github' 'https://github.com/arega24' 
 
 mkdir -p ~/.local/share/applications/
 cp -r ~/autosetup-scripts/nativefier/applications/* ~/.local/share/applications/
