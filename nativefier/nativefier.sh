@@ -19,6 +19,7 @@ nativefier --name 'Kick' 'https://kick.com/'
 nativefier --name 'Syncthing' 'http://127.0.0.1:8384/' 
 nativefier --name 'Duolingo' 'https://www.duolingo.com/' 
 nativefier --name 'Github' 'https://github.com/arega24' 
+nativefier --name 'Tradingview' 'https://www.tradingview.com/' 
 
 mkdir -p ~/.local/share/applications/
 cp -r ~/autosetup-scripts/nativefier/applications/* ~/.local/share/applications/
