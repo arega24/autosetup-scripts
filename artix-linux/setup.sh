@@ -61,6 +61,9 @@ cd yay
 makepkg -si 
 cd 
 
+## Terminal Games
+yay -S bastet nsnake bash2048 ninvaders-git greed myman
+
 ## The rest
 sudo pacman -S python-pywal cmus
 yay -S pfetch timeshift brillo librewolf-bin logseq-desktop-bin
