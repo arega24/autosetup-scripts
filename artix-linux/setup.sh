@@ -54,6 +54,9 @@ sudo ntpd -qg
 ## neovim
 sudo pacman -S neovim wget 
 
+## ADB
+sudo pacman -S android-tools
+
 ## AUR Dependencies/ useful pkgs
 sudo pacman -S git base-devel 
 git clone https://aur.archlinux.org/yay.git 
