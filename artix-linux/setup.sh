@@ -54,8 +54,8 @@ sudo ntpd -qg
 ## neovim
 sudo pacman -S neovim wget 
 
-## ADB
-sudo pacman -S android-tools
+## ADB and scrcpy
+sudo pacman -S android-tools scrcpy
 
 ## AUR Dependencies/ useful pkgs
 sudo pacman -S git base-devel 
