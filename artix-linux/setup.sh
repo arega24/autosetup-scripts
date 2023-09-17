@@ -68,7 +68,7 @@ cd
 yay -S bastet nsnake bash2048 ninvaders-git greed myman
 
 ## The rest
-sudo pacman -S python-pywal cmus
+sudo pacman -S python-pywal cmus element-desktop
 yay -S sayonara-player
 yay -S pfetch timeshift brillo librewolf-bin logseq-desktop-bin
 yay -S feh redshift rxvt-unicode picom zip xsecurelock htop libqalculate keepassxc syncthing flameshot sxiv mpv diskonaut       
